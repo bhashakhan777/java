@@ -1,0 +1,106 @@
+reversse a word 
+public class WordReverser {
+    public static void main(String[] args) {
+        String word = "akhil";
+        String reversedWord = reverseWord(word);
+        System.out.println("Reversed word: " + reversedWord);
+    }
+
+    public static String reverseWord(String word) {
+        String reversedWord = "";
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversedWord += word.charAt(i);
+        }
+        return reversedWord;
+    }
+}
+                              input:akhil
+                              output:lihka
+2)string to integer
+public class StringToInteger {
+    public static void main(String[] args) {
+        String str = "12345";
+        int num = Integer.parseInt(str);                                        INPUT:12345
+        System.out.println("Converted Integer: " + num);                        OUTPUT:12345    
+    }}
+
+
+
+3)vowels
+public class VowelCounter {
+    public static void main(String[] args) {
+        String statement = "This is a sample statement to count vowels.";
+        int vowelsCount = countVowels(statement);
+        System.out.println("Number of vowels in the statement: " + vowelsCount);
+    }
+    public static int countVowels(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char ch = Character.toLowerCase(str.charAt(i));
+            if (ch == 'a'||ch=='e'||ch=='i'||ch=='o'||ch =='u'){
+                count++;
+            }}
+        return count;
+    }}
+
+
+4)factorial
+public class Factorial {
+    public static void main(String[] args) {
+        int num = 5;
+        int factorial = 1;
+        for(int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        System.out.println("Factorial of " + num + " is " + factorial);
+    }}
+
+5)matrix multiplication
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        int[][] matrixA = {{1, 2, 3}, {4, 5, 6}};
+        int[][] matrixB = {{7, 8}, {9, 10}, {11, 12}};
+
+        int[][] result = multiplyMatrices(matrixA, matrixB);
+
+        System.out.println("Matrix A:");
+        printMatrix(matrixA);
+        System.out.println("Matrix B:");
+        printMatrix(matrixB);
+        System.out.println("Result:");
+        printMatrix(result);
+    }
+
+    public static int[][] multiplyMatrices(int[][] matrixA, int[][] matrixB) {
+        int rowsA = matrixA.length;
+        int colsA = matrixA[0].length;
+        int rowsB = matrixB.length;
+        int colsB = matrixB[0].length;
+
+        if (colsA!= rowsB) {
+            System.out.println("Matrices cannot be multiplied");
+            return null;
+        }
+
+        int[][] result = new int[rowsA][colsB];
+
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsB; j++) {
+                for (int k = 0; k < colsA; k++) {
+                    result[i][j] += matrixA[i][k] * matrixB[k][j];
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
