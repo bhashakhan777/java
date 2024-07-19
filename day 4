@@ -1,0 +1,128 @@
+1)write a single inheritance program 
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();  
+        dog.bark();
+    }
+}
+2)write a single inheritance program for area of the circle  
+class Shape {
+    protected String color;
+
+    public Shape(String color) {
+        this.color = color;
+    }
+
+    public void displayInfo() {
+        System.out.println("This is a shape of color: " + color);
+    }
+}
+class Circle extends Shape {
+    private double radius;
+    public Circle(String color, double radius) {
+        // Call to superclass constructor
+        super(color);
+        this.radius = radius;
+    }
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle("Red", 3.5);
+        circle.displayInfo();  
+        double area = circle.calculateArea();
+        System.out.println("Area of the circle: " + area);
+    }
+}
+3)write a program for car classes by using single inheritance
+
+class Car {
+    protected String brand;
+    protected String model;
+    protected int year;
+
+    public Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+
+    public void displayInfo() {
+        System.out.println("Car: " + year + " " + brand + " " + model);
+    }
+}
+
+class ElectricCar extends Car {
+    private int batteryCapacity; // in kWh
+
+    public ElectricCar(String brand, String model, int year, int batteryCapacity) {
+
+        super(brand, model, year);
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    public void displayElectricInfo() {
+        System.out.println("Battery Capacity: " + batteryCapacity + " kWh");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        ElectricCar teslaModelS = new ElectricCar("Tesla", "Model S", 2023, 100);
+
+        teslaModelS.displayInfo(); 
+        teslaModelS.displayElectricInfo();
+    }
+}
+4) write a java program for single inheritance fordriving car
+class Vehicle {
+    protected String brand;
+    protected int year;
+
+    public Vehicle(String brand, int year) {
+        this.brand = brand;
+        this.year = year;
+    }
+
+    public void displayInfo() {
+        System.out.println("Vehicle: " + year + " " + brand);
+    }
+}
+class Car extends Vehicle {
+    private String model;
+    public Car(String brand, int year, String model) {
+
+        super(brand, year);
+        this.model = model;
+    }
+
+    public void displayCarInfo() {
+        System.out.println("Car: " + year + " " + brand + " " + model);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Car myCar = new Car("Toyota", 2023, "Camry");
+
+        myCar.displayInfo();  
+        myCar.displayCarInfo();
+    }
+}
