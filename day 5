@@ -1,0 +1,76 @@
+1)class Main {
+  public static void main(String[] args) {
+
+    try {
+      int divideByZero = 5 / 0;
+      System.out.println("Rest of code in try block");
+    }
+
+    catch (ArithmeticException e) {
+      System.out.println("ArithmeticException => " + e.getMessage());
+    }
+  }
+}
+
+2)class Main {
+  public static void divideByZero() {
+
+    // throw an exception
+    throw new ArithmeticException("Trying to divide by 0");
+  }
+
+  public static void main(String[] args) {
+    divideByZero();
+  }
+}
+
+
+3)public class ArithmeticExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int num = 10 / 0;
+            System.out.println("Result: " + num);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+
+
+4)public class NullPointerExceptionExample {
+    public static void main(String[] args) {
+        String str = null;
+        try {
+            System.out.println(str.length());
+        } catch (NullPointerException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+
+5)class ListOfNumbers {
+  public int[] arr = new int[10];
+
+  public void writeList() {
+
+    try {
+      arr[10] = 11;
+    }
+
+    catch (NumberFormatException e1) {
+      System.out.println("NumberFormatException => " + e1.getMessage());
+    }
+
+    catch (IndexOutOfBoundsException e2) {
+      System.out.println("IndexOutOfBoundsException => " + e2.getMessage());
+    }
+
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    ListOfNumbers list = new ListOfNumbers();
+    list.writeList();
+  }
+}
